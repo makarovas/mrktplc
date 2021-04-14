@@ -1,9 +1,11 @@
-import React from 'react'
-
+import React from "react";
+import { useSelector } from "react-redux";
 export default function Home() {
-    return (
-        <div className='container-fluid h1 p5 text-center'>
-            Home
-        </div>
-    )
+  const { name } = useSelector((state) => state.user);
+
+  return (
+    <div className="container-fluid h1 p5 text-center">
+      {JSON.stringify(name)}
+    </div>
+  );
 }
