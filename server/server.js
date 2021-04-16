@@ -12,6 +12,17 @@ const PORT = process.env.PORT || 8000;
 app.use(cors());
 app.use(morgan("dev"));
 
+// connect DB
+mongoose
+  .connect(process.env.DATABASE, {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+    useUnifiedTopology:true,
+    useCreateIndex: true
+  })
+  .then(()=> console.log('DB Conneceted'))
+  .catch(()=> console.log('Error'))
+
 // route
 readdirSync("./routes").map((r) => app.use("/api", require(`./routes/${r}`)));
 
