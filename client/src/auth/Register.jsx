@@ -1,16 +1,18 @@
 import React from "react";
 import RegisterForm from "./Registration/RegisterForm";
 import { call } from "../api/authentication";
-const Register = () => {
-  const handleSubmit = (values) => call(values);
+import "react-toastify/dist/ReactToastify.css";
 
+const Register = ({ history }) => {
+  const handleSubmit = (values) => call(values);
+  console.log(history);
   return (
-    <div>
-      <div className="container-fluid bg-secondary p-5 text-center">
+    <main>
+      <h1 className="container-fluid bg-secondary p-5 text-center">
         Register Form
-      </div>
+      </h1>
       <RegisterForm handleSubmit={handleSubmit} />
-    </div>
+    </main>
   );
 };
 

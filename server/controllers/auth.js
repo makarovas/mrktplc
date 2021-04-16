@@ -14,7 +14,7 @@ export const register = async (req, res) => {
   // if (!email) return res.status(400).send("Email Name is required");
 
   let userExist = await User.findOne({ email }).exec();
-  if (userExist) return res.status(200).send("Email is already taken");
+  if (userExist) return res.status(400).send("Email is already taken");
   // register
   const user = new User(req.body);
   console.log(user);
