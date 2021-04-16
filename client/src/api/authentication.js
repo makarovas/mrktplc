@@ -6,8 +6,8 @@ export const call = async ({
   lastName,
   email,
   password,
-  callback,
-}) => {
+}, ...rest) => {
+  const {push} = rest[0];
   try {
     const response = await axios.post(`http://localhost:8000/api/register`, {
       firstName,
@@ -15,8 +15,9 @@ export const call = async ({
       email,
       password,
     });
-    console.log(response);
+    
     toast.success("Register success. Please login.");
+    push('/login');
   } catch (err) {
     console.log(err);
     if (err.response.status === 400) {

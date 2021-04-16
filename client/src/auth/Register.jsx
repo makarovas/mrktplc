@@ -4,8 +4,10 @@ import { call } from "../api/authentication";
 import "react-toastify/dist/ReactToastify.css";
 
 const Register = ({ history }) => {
-  const handleSubmit = (values) => call(values);
-  console.log(history);
+  const handleSubmit = (values) => {
+    call(values, history)
+  };
+  console.log(process.env.REACT_APP_API)
   return (
     <main>
       <h1 className="container-fluid bg-secondary p-5 text-center">
