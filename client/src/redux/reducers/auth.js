@@ -1,14 +1,14 @@
 import { initialState } from "../initialState";
-
+import { LOGOUT, LOGIN } from "../constans/auth";
 export const authReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "LOGIN": {
+    case LOGOUT: {
       return {
         ...state,
         ...action.payload,
       };
     }
-    case "LOGOUT": {
+    case LOGIN: {
       return {
         ...state,
         ...action.payload,

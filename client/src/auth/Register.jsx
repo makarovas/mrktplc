@@ -1,13 +1,8 @@
 import React from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import SignupSchema from "./Registration/SignupSchema";
-import { INITIAL_VALUES } from "./Registration/InitialValues";
 import RegisterForm from "./Registration/RegisterForm";
-
+import { call } from "../api/authentication";
 const Register = () => {
-  const handleSubmit = (values) => {
-    console.table(values);
-  };
+  const handleSubmit = (values) => call(values);
 
   return (
     <div>

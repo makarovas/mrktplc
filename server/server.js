@@ -8,20 +8,21 @@ const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 8000;
 
-// middleware
+// middlewares
 app.use(cors());
 app.use(morgan("dev"));
+app.use(express.json());
 
-// connect DB
+// connect config DB
 mongoose
   .connect(process.env.DATABASE, {
     useNewUrlParser: true,
     useFindAndModify: false,
-    useUnifiedTopology:true,
-    useCreateIndex: true
+    useUnifiedTopology: true,
+    useCreateIndex: true,
   })
-  .then(()=> console.log('DB Conneceted'))
-  .catch(()=> console.log('Error'))
+  .then(() => console.log("DB Conneceted"))
+  .catch(() => console.log("Error"));
 
 // route
 readdirSync("./routes").map((r) => app.use("/api", require(`./routes/${r}`)));

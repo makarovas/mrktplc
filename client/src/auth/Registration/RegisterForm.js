@@ -2,6 +2,7 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import SignupSchema from "./SignupSchema";
 import { INITIAL_VALUES } from "./InitialValues";
+import { InputField } from "./InputField";
 
 const RegisterForm = ({ handleSubmit }) => {
   return (
@@ -15,6 +16,7 @@ const RegisterForm = ({ handleSubmit }) => {
           <div className="col-md-8 col-md-offset-3">
             <div className="form-group">
               <Form>
+                {/* <InputField /> */}
                 <div className="row mt-2">
                   <label htmlFor="firstName" className="form-label p-0">
                     First name
