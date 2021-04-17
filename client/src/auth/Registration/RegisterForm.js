@@ -16,7 +16,12 @@ const RegisterForm = ({ handleSubmit }) => {
           <div className="col-md-8 col-md-offset-3">
             <div className="form-group">
               <Form>
-                {/* <InputField /> */}
+                {/* <InputField 
+                  name='firstName' 
+                  error={errors} 
+                  touched={touched}
+                  label="First Name"
+                /> */}
                 <div className="row mt-2">
                   <label htmlFor="firstName" className="form-label p-0">
                     First name

@@ -1,6 +1,6 @@
 import React from "react";
 import RegisterForm from "./Registration/RegisterForm";
-import { call } from "../api/authentication";
+import { register } from "../api/authentication";
 import "react-toastify/dist/ReactToastify.css";
 
 const Register = ({ history }) => (
@@ -9,7 +9,7 @@ const Register = ({ history }) => (
         Register Form
       </h1>
       <RegisterForm handleSubmit={(values) => {
-    call({values, history})}} />
+    register({values, history})}} />
     </main>
   );
 

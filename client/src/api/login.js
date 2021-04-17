@@ -1,7 +1,7 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 
-export const register = async ({
+export const login = async ({
   values,
   history
 }) => {
@@ -12,7 +12,7 @@ const {
   password} = values;
   
   try {
-    const response = await axios.post(`${process.env.REACT_APP_API}/register`, {
+    const response = await axios.post(`${process.env.REACT_APP_API}/login`, {
       firstName,
       lastName,
       email,
