@@ -2,14 +2,17 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 export const call = async ({
+  values,
+  history
+}) => {
+const {
   firstName,
   lastName,
   email,
-  password,
-}, ...rest) => {
-  const {push} = rest[0];
+  password} = values;
+  
   try {
-    const response = await axios.post(`http://localhost:8000/api/register`, {
+    const response = await axios.post(`${process.env.REACT_APP_API}/register`, {
       firstName,
       lastName,
       email,
@@ -17,9 +20,9 @@ export const call = async ({
     });
     
     toast.success("Register success. Please login.");
-    push('/login');
+    history.push('/login');
+
   } catch (err) {
-    console.log(err);
     if (err.response.status === 400) {
       toast.error(`${err.response.data}`);
     }
