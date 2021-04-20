@@ -1,11 +1,7 @@
 import React from "react";
 import { Form, Field, ErrorMessage } from "formik";
 
-export const InputField = ({ 
-  errors, 
-  touched, 
-  name, 
-  labelName }) => (
+export const InputField = ({ errors, touched, name, labelName }) => (
   <div className="row mt-2">
     <label htmlFor={name} className="form-label p-0">
       {labelName}

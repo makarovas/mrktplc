@@ -4,13 +4,19 @@ import { register } from "../api/authentication";
 import "react-toastify/dist/ReactToastify.css";
 
 const Register = ({ history }) => (
-    <main>
-      <h1 className="container-fluid bg-secondary p-5 text-center">
-        Register Form
-      </h1>
-      <RegisterForm handleSubmit={(values) => {
-    register({values, history})}} />
-    </main>
-  );
+  <main>
+    <h1
+      className="container-fluid bg-secondary p-5 text-center"
+      style={{ width: "20%" }}
+    >
+      Register Form
+    </h1>
+    <RegisterForm
+      handleSubmit={(values) => {
+        register({ values, history });
+      }}
+    />
+  </main>
+);
 
 export default Register;
