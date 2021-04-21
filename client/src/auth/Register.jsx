@@ -7,7 +7,6 @@ const Register = ({ history }) => (
   <main>
     <h1
       className="container-fluid bg-secondary p-5 text-center"
-      style={{ width: "20%" }}
     >
       Register Form
     </h1>
